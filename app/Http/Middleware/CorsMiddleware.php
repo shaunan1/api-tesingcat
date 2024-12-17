@@ -6,6 +6,11 @@ use Closure;
 
 class CorsMiddleware
 {
+    // Di file app/Http/Middleware/VerifyCsrfToken.php
+    protected $except = [
+        'api/*'
+    ];
+
     public function handle($request, Closure $next)
     {
         $response = $next($request);
